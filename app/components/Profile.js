@@ -1,10 +1,15 @@
 const React = require('react')
+const Repos = require('./GitHub/Repos')
+const UserProfile = require('./GitHub/UserProfile')
+const Notes = require('./Notes/Notes')
 
 const Profile = React.createClass({
   getInitialState () {
     return {
       notes: [],
-      bio: {},
+      bio: {
+        name: 'Alexius Hale-Dubuque'
+      },
       repos: []
     }
   },
@@ -13,13 +18,13 @@ const Profile = React.createClass({
     return (
       <div className="row">
         <div className="col-md-4">
-          User Profile component --> {this.props.params.username}
+          <UserProfile username={this.props.params.username} bio={this.state.bio} />
         </div>
         <div className="col-md-4">
-          Repos component
+          <Repos repos={this.state.repos}/>
         </div>
         <div className="col-md-4">
-          Notes component
+          <Notes notes={this.state.notes}/>
         </div>
       </div>
     )
