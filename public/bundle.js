@@ -26385,23 +26385,40 @@
 	var Home = __webpack_require__(235);
 
 
-	module.exports = React.createElement(_reactRouter.Route, { path: '/', component: Main });
+	module.exports = React.createElement(
+	  _reactRouter.Route,
+	  { path: '/', component: Main },
+	  React.createElement(_reactRouter.IndexRoute, { component: Home })
+	);
 
 /***/ },
 /* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(3);
 
 	var Main = React.createClass({
-	  displayName: 'Main',
+	  displayName: "Main",
 	  render: function render() {
 	    return React.createElement(
-	      'div',
-	      null,
-	      'Hello World'
+	      "div",
+	      { className: "main-container" },
+	      React.createElement(
+	        "nav",
+	        { className: "navbar navbar-default", role: "navigation" },
+	        React.createElement(
+	          "div",
+	          { className: "col-sm-7 col-sm-offset-2", style: { marginTop: 15 } },
+	          "MENU"
+	        )
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "container" },
+	        this.props.children
+	      )
 	    );
 	  }
 	});
