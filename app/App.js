@@ -1,8 +1,10 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
-const Router = require('react-router').Router
+import { Router, Route, hashHistory } from 'react-router'
+
 const routes = require('./config/routes')
 
-// ReactDOM.render (
-//   <Router>{routes}</Router>, document.getElementById('app')
-// )
+ReactDOM.render(
+  <Router history={hashHistory}>{routes}</Router>,
+  document.getElementById('app')
+)
