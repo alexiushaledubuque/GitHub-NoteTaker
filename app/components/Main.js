@@ -1,5 +1,4 @@
 const React = require('react');
-const ReactDOM = require('react-dom');
 
 const Main = React.createClass({
   render () {
@@ -11,4 +10,4 @@ const Main = React.createClass({
   }
 });
 
-ReactDOM.render(<Main />, document.getElementById('app'))
+module.exports = Main
