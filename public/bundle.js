@@ -26587,12 +26587,30 @@
 
 	'use strict';
 
+	// const React = require('react')
+	// const NotesList = require('./NotesList')
+	//
+	// const Notes = React.createClass({
+	//   render () {
+	//     // console.log('Notes: ', this.props.notes)
+	//     return (
+	//       <div>
+	//         <h3> Notes for {this.props.username} </h3>
+	//         <NotesList notes={this.props.notes} />
+	//       </div>
+	//     )
+	//   }
+	// });
+	//
+	// module.exports = Notes
+
 	var React = __webpack_require__(3);
+	var NotesList = __webpack_require__(242);
 
 	var Notes = React.createClass({
 	  displayName: 'Notes',
+
 	  render: function render() {
-	    console.log('Notes: ', this.props.notes);
 	    return React.createElement(
 	      'div',
 	      null,
@@ -26602,7 +26620,8 @@
 	        ' Notes for ',
 	        this.props.username,
 	        ' '
-	      )
+	      ),
+	      React.createElement(NotesList, { notes: this.props.notes })
 	    );
 	  }
 	});
@@ -27052,6 +27071,34 @@
 
 	module.exports = Firebase;
 
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(3);
+
+	var NotesList = React.createClass({
+	  displayName: 'NotesList',
+	  render: function render() {
+	    var notes = this.props.notes.map(function (note, index) {
+	      return React.createElement(
+	        'li',
+	        { className: 'list-group-item', key: index },
+	        note['.value']
+	      );
+	    });
+	    return React.createElement(
+	      'ul',
+	      { className: 'list-group' },
+	      notes
+	    );
+	  }
+	});
+
+	module.exports = NotesList;
 
 /***/ }
 /******/ ]);
