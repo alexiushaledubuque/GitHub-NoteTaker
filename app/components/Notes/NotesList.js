@@ -7,7 +7,7 @@ const NotesList = React.createClass({
     })
     return (
       <ul className="list-group">
-        {notes}
+        {notes['.value']}
       </ul>
     )
   }

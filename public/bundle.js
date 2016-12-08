@@ -27093,7 +27093,7 @@
 	    return React.createElement(
 	      'ul',
 	      { className: 'list-group' },
-	      notes
+	      notes['.value']
 	    );
 	  }
 	});
