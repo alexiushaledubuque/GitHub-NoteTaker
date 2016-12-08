@@ -2,8 +2,12 @@ const React = require('react')
 
 const Notes = React.createClass({
   render () {
+    console.log('Notes: ', this.props.notes)
     return (
-      <div> NOTES </div>
+      <div>
+        <p> NOTES </p>
+
+      </div>
     )
   }
 });
