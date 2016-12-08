@@ -5,7 +5,7 @@ const Notes = React.createClass({
     console.log('Notes: ', this.props.notes)
     return (
       <div>
-        <h3> Notes for {this.props.username} </p>
+        <h3> Notes for {this.props.username} </h3>
 
       </div>
     )
