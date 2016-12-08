@@ -26460,8 +26460,7 @@
 
 	var Repos = __webpack_require__(237);
 	var UserProfile = __webpack_require__(238);
-	var Notes = __webpack_require__(239);
-	// import ReactFireMixin = require('reactfire')
+	var Notes = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./Notes/Notes\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	var ReactFireMixin = __webpack_require__(240);
 	var Firebase = __webpack_require__(241);
 
@@ -26583,32 +26582,7 @@
 	module.exports = UserProfiles;
 
 /***/ },
-/* 239 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var React = __webpack_require__(3);
-
-	var Notes = React.createClass({
-	  displayName: 'Notes',
-	  render: function render() {
-	    console.log('Notes: ', this.props.notes);
-	    return React.createElement(
-	      'div',
-	      null,
-	      React.createElement(
-	        'p',
-	        null,
-	        ' NOTES '
-	      )
-	    );
-	  }
-	});
-
-	module.exports = Notes;
-
-/***/ },
+/* 239 */,
 /* 240 */
 /***/ function(module, exports, __webpack_require__) {
 

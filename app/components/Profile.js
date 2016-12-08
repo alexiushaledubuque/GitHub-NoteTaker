@@ -3,7 +3,6 @@ import { Router } from 'react-router'
 const Repos = require('./GitHub/Repos')
 const UserProfile = require('./GitHub/UserProfile')
 const Notes = require('./Notes/Notes')
-// import ReactFireMixin = require('reactfire')
 const ReactFireMixin = require('reactfire')
 const Firebase = require('firebase')
 
