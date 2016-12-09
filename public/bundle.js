@@ -26399,12 +26399,17 @@
 
 	'use strict';
 
+	var _SearchGithub = __webpack_require__(244);
+
+	var _SearchGithub2 = _interopRequireDefault(_SearchGithub);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	var React = __webpack_require__(3);
-	var SearchGithub = __webpack_require__(244);
+
 
 	var Main = React.createClass({
 	  displayName: 'Main',
-
 	  render: function render() {
 	    return React.createElement(
 	      'div',
@@ -26412,7 +26417,11 @@
 	      React.createElement(
 	        'nav',
 	        { className: 'navbar navbar-default', role: 'navigation' },
-	        React.createElement('div', { className: 'col-sm-7 col-sm-offset-2', style: { marginTop: 15 } })
+	        React.createElement(
+	          'div',
+	          { className: 'col-sm-7 col-sm-offset-2', style: { marginTop: 15 } },
+	          React.createElement(_SearchGithub2.default, null)
+	        )
 	      ),
 	      React.createElement(
 	        'div',
@@ -26425,27 +26434,25 @@
 
 	module.exports = Main;
 
-	// const React = require('react')
-	// const TEST = require('./Profile')
+	// import React from 'react';
+	// import SearchGithub from './SearchGithub'
 	//
-	// const Main = React.createClass({
-	//   render () {
-	//     return (
-	//       <div className="main-container">
-	//         <nav  className="navbar navbar-default" role="navigation">
-	//           <div className="col-sm-7 col-sm-offset-2" style={{marginTop: 15}}>
-	//
-	//           </div>
-	//         </nav>
-	//         <div className="container">
-	//           {this.props.children}
+	// const Main = ({children, history}) => {
+	//   return (
+	//     <div className="main-container">
+	//       <nav className="navbar navbar-default" role="navigation">
+	//         <div className="col-sm-7 col-sm-offset-2" style={{marginTop: 15}}>
+	//           <SearchGithub history={history}/>
 	//         </div>
+	//       </nav>
+	//       <div className="container">
+	//         {children}
 	//       </div>
-	//     )
-	//   }
-	// });
+	//     </div>
+	//   )
+	// }
 	//
-	// module.exports = Main
+	// export default Main
 
 /***/ },
 /* 235 */
@@ -27234,7 +27241,7 @@
 	    value: function handleSubmit() {
 	      var username = this.usernameRef.value;
 	      this.usernameRef.value = '';
-	      this.props.history.pushState(null, "/profile/" + username);
+	      // this.props.history.pushState(null, "/profile/" + username)
 	    }
 	  }, {
 	    key: 'render',
@@ -27278,37 +27285,6 @@
 	};
 
 	exports.default = SearchGithub;
-
-	// const React = require('react')
-	// import { Router } from 'react-router'
-	//
-	// const SearchGithub = React.createClass({
-	//   mixins: [Router.History],
-	//   getRef (ref) {
-	//     this.usernameRef = ref
-	//   },
-	//   handleSubmit () {
-	//     let username = this.usernameRef.value
-	//     this.usernameRef.value = ''
-	//     this.history.pushState(null, "profile/" +_ username)
-	//   },
-	//   render () {
-	//     return (
-	//       <div className="col-sm-12">
-	//         <form onSubmit={this.handleSubmit}>
-	//           <div className="form-group col-sm-7">
-	//             <input type="text" className="form-control" ref={this.getRef} />
-	//           </div>
-	//           <div>
-	//             <button type="submit" className="btn btn-default btn-primary">Search Github</button>
-	//           </div>
-	//         </form>
-	//       </div>
-	//     )
-	//   }
-	// })
-	//
-	// module.exports = SearchGithub
 
 /***/ }
 /******/ ]);
