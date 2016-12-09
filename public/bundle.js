@@ -26478,7 +26478,7 @@
 	    };
 	  },
 	  componentDidMount: function componentDidMount() {
-	    this.ref = new Firebase('https://github-notetaker-ce9a6.firebaseio.com');
+	    this.ref = new Firebase('http://github-notetaker-ce9a6.firebaseio.com/');
 	    var childRef = this.ref.child(this.props.params.username);
 	    this.bindAsArray(childRef, 'notes');
 	  },
