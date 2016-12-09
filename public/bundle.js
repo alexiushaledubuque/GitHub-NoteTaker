@@ -26397,28 +26397,26 @@
 /* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var React = __webpack_require__(3);
+	var SearchGithub = __webpack_require__(244);
 
 	var Main = React.createClass({
-	  displayName: "Main",
+	  displayName: 'Main',
+
 	  render: function render() {
 	    return React.createElement(
-	      "div",
-	      { className: "main-container" },
+	      'div',
+	      { className: 'main-container' },
 	      React.createElement(
-	        "nav",
-	        { className: "navbar navbar-default", role: "navigation" },
-	        React.createElement(
-	          "div",
-	          { className: "col-sm-7 col-sm-offset-2", style: { marginTop: 15 } },
-	          "MENU"
-	        )
+	        'nav',
+	        { className: 'navbar navbar-default', role: 'navigation' },
+	        React.createElement('div', { className: 'col-sm-7 col-sm-offset-2', style: { marginTop: 15 } })
 	      ),
 	      React.createElement(
-	        "div",
-	        { className: "container" },
+	        'div',
+	        { className: 'container' },
 	        this.props.children
 	      )
 	    );
@@ -26426,6 +26424,28 @@
 	});
 
 	module.exports = Main;
+
+	// const React = require('react')
+	// const TEST = require('./Profile')
+	//
+	// const Main = React.createClass({
+	//   render () {
+	//     return (
+	//       <div className="main-container">
+	//         <nav  className="navbar navbar-default" role="navigation">
+	//           <div className="col-sm-7 col-sm-offset-2" style={{marginTop: 15}}>
+	//
+	//           </div>
+	//         </nav>
+	//         <div className="container">
+	//           {this.props.children}
+	//         </div>
+	//       </div>
+	//     )
+	//   }
+	// });
+	//
+	// module.exports = Main
 
 /***/ },
 /* 235 */
@@ -26542,7 +26562,13 @@
 	      React.createElement(
 	        'p',
 	        null,
-	        ' ',
+	        ' Username: ',
+	        this.props.username
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        ' REPOS: ',
 	        this.props.repos,
 	        ' '
 	      )
@@ -27160,6 +27186,129 @@
 	});
 
 	module.exports = AddNote;
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(3);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(1);
+
+	var _reactRouter2 = _interopRequireDefault(_reactRouter);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SearchGithub = function (_React$Component) {
+	  _inherits(SearchGithub, _React$Component);
+
+	  function SearchGithub() {
+	    _classCallCheck(this, SearchGithub);
+
+	    return _possibleConstructorReturn(this, (SearchGithub.__proto__ || Object.getPrototypeOf(SearchGithub)).apply(this, arguments));
+	  }
+
+	  _createClass(SearchGithub, [{
+	    key: 'getRef',
+	    value: function getRef(ref) {
+	      this.usernameRef = ref;
+	    }
+	  }, {
+	    key: 'handleSubmit',
+	    value: function handleSubmit() {
+	      var username = this.usernameRef.value;
+	      this.usernameRef.value = '';
+	      this.props.history.pushState(null, "/profile/" + username);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'col-sm-12' },
+	        _react2.default.createElement(
+	          'form',
+	          { onSubmit: function onSubmit() {
+	              return _this2.handleSubmit();
+	            } },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'form-group col-sm-7' },
+	            _react2.default.createElement('input', { type: 'text', className: 'form-control', ref: function ref(_ref) {
+	                return _this2.getRef(_ref);
+	              } })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'form-group col-sm-5' },
+	            _react2.default.createElement(
+	              'button',
+	              { type: 'submit', className: 'btn btn-block btn-primary' },
+	              'Search Github'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return SearchGithub;
+	}(_react2.default.Component);
+
+	SearchGithub.PropTypes = {
+	  history: _react2.default.PropTypes.object.isRequired
+	};
+
+	exports.default = SearchGithub;
+
+	// const React = require('react')
+	// import { Router } from 'react-router'
+	//
+	// const SearchGithub = React.createClass({
+	//   mixins: [Router.History],
+	//   getRef (ref) {
+	//     this.usernameRef = ref
+	//   },
+	//   handleSubmit () {
+	//     let username = this.usernameRef.value
+	//     this.usernameRef.value = ''
+	//     this.history.pushState(null, "profile/" +_ username)
+	//   },
+	//   render () {
+	//     return (
+	//       <div className="col-sm-12">
+	//         <form onSubmit={this.handleSubmit}>
+	//           <div className="form-group col-sm-7">
+	//             <input type="text" className="form-control" ref={this.getRef} />
+	//           </div>
+	//           <div>
+	//             <button type="submit" className="btn btn-default btn-primary">Search Github</button>
+	//           </div>
+	//         </form>
+	//       </div>
+	//     )
+	//   }
+	// })
+	//
+	// module.exports = SearchGithub
 
 /***/ }
 /******/ ]);

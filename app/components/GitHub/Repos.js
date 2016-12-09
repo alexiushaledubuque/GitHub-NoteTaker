@@ -9,7 +9,8 @@ const Repos = React.createClass({
     return (
       <div>
         <p> REPOS </p>
-        <p> {this.props.repos} </p>
+        <p> Username: {this.props.username}</p>
+        <p> REPOS: {this.props.repos} </p>
       </div>
     )
   }
