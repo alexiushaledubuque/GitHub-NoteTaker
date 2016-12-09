@@ -26485,6 +26485,9 @@
 	  componentWillUnmount: function componentWillUnmount() {
 	    this.unbind('notes');
 	  },
+	  handleAddNote: function handleAddNote(newNote) {
+	    this.ref.child(this.props.params.username).child(this.state.notes.length).set(newNote);
+	  },
 	  render: function render() {
 	    return React.createElement(
 	      'div',

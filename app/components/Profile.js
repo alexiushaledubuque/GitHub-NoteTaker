@@ -25,6 +25,9 @@ const Profile = React.createClass({
   componentWillUnmount () {
     this.unbind('notes')
   },
+  handleAddNote (newNote) {
+    this.ref.child(this.props.params.username).child(this.state.notes.length).set(newNote)
+  },
   render () {
     return (
       <div className="row">
