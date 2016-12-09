@@ -1,4 +1,4 @@
-const React = required('react')
+const React = require('react')
 
 const AddNote = React.createClass({
   propTypes: {

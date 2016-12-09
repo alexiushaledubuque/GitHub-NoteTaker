@@ -27120,11 +27120,11 @@
 
 /***/ },
 /* 243 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var React = required('react');
+	var React = __webpack_require__(3);
 
 	var AddNote = React.createClass({
 	  displayName: 'AddNote',
