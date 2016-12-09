@@ -4,7 +4,8 @@ const NotesList = require('./NotesList')
 const Notes = React.createClass({
   propTypes: {
     username: React.PropTypes.string.isRequired,
-    notes: React.PropTypes.array.isRequired
+    notes: React.PropTypes.array.isRequired,
+    addNote: React.PropTypes.func.isRequired
   },
   render () {
     // console.log('Notes: ', this.props.notes)

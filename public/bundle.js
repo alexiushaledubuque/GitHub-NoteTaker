@@ -26505,7 +26505,9 @@
 	      React.createElement(
 	        'div',
 	        { className: 'col-md-4' },
-	        React.createElement(Notes, { username: this.props.params.username, notes: this.state.notes })
+	        React.createElement(Notes, { username: this.props.params.username,
+	          notes: this.state.notes,
+	          addNote: this.handleAddNote })
 	      )
 	    );
 	  }
@@ -26608,7 +26610,8 @@
 
 	  propTypes: {
 	    username: React.PropTypes.string.isRequired,
-	    notes: React.PropTypes.array.isRequired
+	    notes: React.PropTypes.array.isRequired,
+	    addNote: React.PropTypes.func.isRequired
 	  },
 	  render: function render() {
 	    // console.log('Notes: ', this.props.notes)
