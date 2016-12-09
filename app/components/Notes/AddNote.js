@@ -9,7 +9,9 @@ const AddNote = React.createClass({
     this.note = ref;
   },
   handleSubmit () {
-
+    let newNote = this.note.value
+    this.note.value = ''
+    this.props.addNote(newNote)
   },
   render () {
     return (
