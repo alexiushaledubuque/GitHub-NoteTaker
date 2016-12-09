@@ -6,6 +6,11 @@ const SearchGithub = React.createClass({
   getRef (ref) {
     this.usernameRef = ref
   },
+  handleSubmit () {
+    let username = this.usernameRef.value
+    this.usernameRef.value = ''
+    this.history.pushState(null, "profile/" +_ username)
+  },
   render () {
     return (
       <div className="col-sm-12">
