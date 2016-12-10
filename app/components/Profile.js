@@ -11,17 +11,17 @@ const Profile = React.createClass({
   mixins: [ReactFireMixin],
   getInitialState () {
     return {
-      notes: [1, 2, 3],
-      bio: {
-        name: 'Tyler McGinnis'
-      },
-      repos: ['a', 'b', 'c']
+      notes: [],
+      bio: {},
+      repos: []
     }
   },
   componentDidMount () {
     this.ref = new Firebase('http://github-notetaker-ce9a6.firebaseio.com/')
     const childRef = this.ref.child(this.props.params.username)
     this.bindAsArray(childRef, 'notes')
+
+    console.log('RUNNING HELPERS NEXT');
 
     helpers.getGithubInfo(this.props.params.username)
       .then(function(data){

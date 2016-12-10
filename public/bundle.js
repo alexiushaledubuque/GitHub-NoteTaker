@@ -26570,17 +26570,17 @@
 	  mixins: [ReactFireMixin],
 	  getInitialState: function getInitialState() {
 	    return {
-	      notes: [1, 2, 3],
-	      bio: {
-	        name: 'Tyler McGinnis'
-	      },
-	      repos: ['a', 'b', 'c']
+	      notes: [],
+	      bio: {},
+	      repos: []
 	    };
 	  },
 	  componentDidMount: function componentDidMount() {
 	    this.ref = new Firebase('http://github-notetaker-ce9a6.firebaseio.com/');
 	    var childRef = this.ref.child(this.props.params.username);
 	    this.bindAsArray(childRef, 'notes');
+
+	    console.log('RUNNING HELPERS NEXT');
 
 	    helpers.getGithubInfo(this.props.params.username).then(function (data) {
 	      this.setState({
@@ -26638,6 +26638,7 @@
 	    repos: React.PropTypes.array.isRequired
 	  },
 	  render: function render() {
+	    console.log('REPOS: ', this.props.repos);
 	    return React.createElement(
 	      'div',
 	      null,
@@ -26645,19 +26646,6 @@
 	        'p',
 	        null,
 	        ' REPOS '
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        ' Username: ',
-	        this.props.username
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        ' REPOS: ',
-	        this.props.repos,
-	        ' '
 	      )
 	    );
 	  }
@@ -26681,6 +26669,7 @@
 	    bio: React.PropTypes.object.isRequired
 	  },
 	  render: function render() {
+	    console.log('BIO: ', this.props.bio);
 	    return React.createElement(
 	      'div',
 	      null,
@@ -26694,13 +26683,6 @@
 	        null,
 	        ' Username: ',
 	        this.props.username,
-	        ' '
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        ' Bio: ',
-	        this.props.bio.name,
 	        ' '
 	      )
 	    );
@@ -27290,8 +27272,14 @@
 	  return axios.get('https://api.github.com/users/' + username);
 	}
 
+	// const promiseObj = getRepos('alexiushaledubuque');
+	// promiseObj.then(function(data){
+	//   console.log(data);
+	// });
+
 	var helpers = {
 	  getGithubInfo: function getGithubInfo(username) {
+	    console.log('INSIDE HELPERS');
 	    return axios.all([getRepos(username), getUserInfo(username)]).then(function (arr) {
 	      return {
 	        repos: arr[0].data,
@@ -27300,6 +27288,8 @@
 	    });
 	  }
 	};
+
+	console.log('LEAVING HELPERS');
 
 	module.exports = helpers;
 
