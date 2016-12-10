@@ -26557,7 +26557,7 @@
 
 	var React = __webpack_require__(3);
 
-	var Repos = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./GitHub/Repos\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var Repos = __webpack_require__(238);
 	var UserProfile = __webpack_require__(239);
 	var Notes = __webpack_require__(240);
 	var ReactFireMixin = __webpack_require__(243);
@@ -26623,7 +26623,61 @@
 	module.exports = Profile;
 
 /***/ },
-/* 238 */,
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(3);
+
+	var Repos = React.createClass({
+	  displayName: "Repos",
+
+	  propTypes: {
+	    username: React.PropTypes.string.isRequired,
+	    repos: React.PropTypes.array.isRequired
+	  },
+	  render: function render() {
+	    var repos = this.props.repos.map(function (repo, index) {
+	      return React.createElement(
+	        "li",
+	        { className: "list-group-item", key: index },
+	        repo.html_url && React.createElement(
+	          "h4",
+	          null,
+	          React.createElement(
+	            "a",
+	            { href: repo.html_url },
+	            repo.name
+	          )
+	        ),
+	        repo.description && React.createElement(
+	          "p",
+	          null,
+	          repo.description
+	        )
+	      );
+	    });
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement(
+	        "h3",
+	        null,
+	        " User Repos "
+	      ),
+	      React.createElement(
+	        "ul",
+	        { className: "list-group" },
+	        repos
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Repos;
+
+/***/ },
 /* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
