@@ -26547,12 +26547,12 @@
 	            } },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'form-group col-sm-1' },
+	            { className: 'form-group col-sm-3' },
 	            'Return to Main'
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'form-group col-sm-7' },
+	            { className: 'form-group col-sm-5' },
 	            _react2.default.createElement('input', { type: 'text', className: 'form-control', ref: function ref(_ref) {
 	                return _this2.getRef(_ref);
 	              } })

@@ -16,10 +16,10 @@ class SearchGithub extends React.Component {
     return (
       <div className="col-sm-12">
         <form onSubmit={() => this.handleSubmit()}>
-          <div className="form-group col-sm-1">
+          <div className="form-group col-sm-3">
             Return to Main
           </div>
-          <div className="form-group col-sm-7">
+          <div className="form-group col-sm-5">
             <input type="text" className="form-control" ref={(ref) => this.getRef(ref)} />
           </div>
           <div className="form-group col-sm-4">
