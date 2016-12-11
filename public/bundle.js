@@ -27355,6 +27355,10 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _axios = __webpack_require__(246);
 
 	var _axios2 = _interopRequireDefault(_axios);
@@ -27372,15 +27376,12 @@
 	var helpers = {
 	  getGithubInfo: function getGithubInfo(username) {
 	    return _axios2.default.all([getRepos(username), getUserInfo(username)]).then(function (arr) {
-	      return {
-	        repos: arr[0].data,
-	        bio: arr[1].data
-	      };
+	      return { repos: arr[0].data, bio: arr[1].data };
 	    });
 	  }
 	};
 
-	module.exports = helpers;
+	exports.default = helpers;
 
 /***/ },
 /* 246 */
