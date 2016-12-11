@@ -1,8 +1,8 @@
 import React from 'react'
 
-class NotesList extends React.Component{
+class NotesList extends React.Component {
   render () {
-    const { notes } = this.props
+    const { notes } = this.props;
     return (
       <ul className="list-group">
         {notes.map((note, index) => (
