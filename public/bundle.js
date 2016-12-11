@@ -26493,7 +26493,6 @@
 	    value: function handleSubmit() {
 	      var username = this.usernameRef.value;
 	      this.usernameRef.value = '';
-	      console.log('USERNAME: ', username);
 	      _reactRouter.hashHistory.push('/profile/' + username);
 	    }
 	  }, {

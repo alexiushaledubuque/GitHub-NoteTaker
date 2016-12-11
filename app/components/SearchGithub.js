@@ -10,7 +10,6 @@ class SearchGithub extends React.Component {
   handleSubmit(){
     const username = this.usernameRef.value
     this.usernameRef.value = '';
-    console.log('USERNAME: ', username)
     hashHistory.push(`/profile/${username}`)
   }
   render(){

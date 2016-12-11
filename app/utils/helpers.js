@@ -9,7 +9,7 @@ function getUserInfo(username) {
 }
 
 let helpers = {
-  getGithubInfo: function(username) {
+  getGithubInfo(username) {
     return axios.all([getRepos(username), getUserInfo(username)])
       .then(function(arr){
         return {
