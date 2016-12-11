@@ -39,7 +39,7 @@ class Profile extends React.Component {
       asArray: true,
       state: 'notes'
     })
-    getGithubInfo(username)
+    getGithubInfo (username)
       .then(function(data){
       this.setState({
           bio: data.bio,
@@ -64,7 +64,7 @@ class Profile extends React.Component {
         <div className="col-md-4">
           <Notes username={this.props.params.username}
           notes={this.state.notes}
-          addNote={(newNote) => this.handleAddNoten(newNote)} />
+          addNote={(newNote) => this.handleAddNote(newNote)} />
         </div>
       </div>
     )

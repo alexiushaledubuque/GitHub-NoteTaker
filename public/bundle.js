@@ -26754,7 +26754,7 @@
 	          _react2.default.createElement(_Notes2.default, { username: this.props.params.username,
 	            notes: this.state.notes,
 	            addNote: function addNote(newNote) {
-	              return _this2.handleAddNoten(newNote);
+	              return _this2.handleAddNote(newNote);
 	            } })
 	        )
 	      );
