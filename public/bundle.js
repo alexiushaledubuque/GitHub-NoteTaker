@@ -27356,19 +27356,23 @@
 
 	'use strict';
 
-	var axios = __webpack_require__(246);
+	var _axios = __webpack_require__(246);
+
+	var _axios2 = _interopRequireDefault(_axios);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function getRepos(username) {
-	  return axios.get('https://api.github.com/users/' + username + '/repos');
+	  return _axios2.default.get('https://api.github.com/users/' + username + '/repos');
 	}
 
 	function getUserInfo(username) {
-	  return axios.get('https://api.github.com/users/' + username);
+	  return _axios2.default.get('https://api.github.com/users/' + username);
 	}
 
 	var helpers = {
 	  getGithubInfo: function getGithubInfo(username) {
-	    return axios.all([getRepos(username), getUserInfo(username)]).then(function (arr) {
+	    return _axios2.default.all([getRepos(username), getUserInfo(username)]).then(function (arr) {
 	      return {
 	        repos: arr[0].data,
 	        bio: arr[1].data
