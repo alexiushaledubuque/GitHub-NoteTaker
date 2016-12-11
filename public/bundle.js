@@ -26378,7 +26378,13 @@
 
 	'use strict';
 
+	var _createBrowserHistory = __webpack_require__(77);
+
+	var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
+
 	var _reactRouter = __webpack_require__(1);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var React = __webpack_require__(3);
 	var Main = __webpack_require__(234);
@@ -26386,11 +26392,17 @@
 	var Profile = __webpack_require__(237);
 
 
+	var history = (0, _createBrowserHistory2.default)();
+
 	module.exports = React.createElement(
-	  _reactRouter.Route,
-	  { path: '/', component: Main },
-	  React.createElement(_reactRouter.Route, { path: 'profile/:username', component: Profile }),
-	  React.createElement(_reactRouter.IndexRoute, { component: Home })
+	  _reactRouter.Router,
+	  { history: (0, _createBrowserHistory2.default)() },
+	  React.createElement(
+	    _reactRouter.Route,
+	    { path: '/', component: Main },
+	    React.createElement(_reactRouter.Route, { path: '/profile/:username', component: Profile }),
+	    React.createElement(_reactRouter.IndexRoute, { component: Home })
+	  )
 	);
 
 /***/ },
@@ -26481,7 +26493,8 @@
 	    value: function handleSubmit() {
 	      var username = this.usernameRef.value;
 	      this.usernameRef.value = '';
-	      // this.props.history.pushState(null, "/profile/" + username)
+	      console.log('USERNAME: ', username);
+	      _reactRouter.hashHistory.push('/profile/' + username);
 	    }
 	  }, {
 	    key: 'render',
@@ -26525,6 +26538,40 @@
 	};
 
 	exports.default = SearchGithub;
+
+	// import React from 'react';
+	// import { Router, browserHistory } from 'react-router';
+	//
+	// class SearchGithub extends React.Component {
+	//   getRef(ref){
+	//     this.usernameRef = ref;
+	//   }
+	//   handleSubmit(){
+	//     const username = this.usernameRef.value;
+	//     this.usernameRef.value = '';
+	//     this.props.browserHistory.push(null, "/profile/" + username)
+	//   }
+	//   render(){
+	//     return (
+	//       <div className="col-sm-12">
+	//         <form onSubmit={this.handleSubmit}>
+	//           <div className="form-group col-sm-7">
+	//             <input type="text" className="form-control" ref={this.getRef} />
+	//           </div>
+	//           <div className="form-group col-sm-5">
+	//             <button type="submit" className="btn btn-block btn-primary">Search Github</button>
+	//           </div>
+	//         </form>
+	//       </div>
+	//     )
+	//   }
+	// }
+	//
+	// SearchGithub.PropTypes = {
+	//   history: React.PropTypes.object.isRequired
+	// }
+	//
+	// export default SearchGithub;
 
 /***/ },
 /* 236 */
@@ -26579,8 +26626,6 @@
 	    this.ref = new Firebase('http://github-notetaker-ce9a6.firebaseio.com/');
 	    var childRef = this.ref.child(this.props.params.username);
 	    this.bindAsArray(childRef, 'notes');
-
-	    console.log('RUNNING HELPERS NEXT');
 
 	    helpers.getGithubInfo(this.props.params.username).then(function (data) {
 	      this.setState({
@@ -27348,14 +27393,8 @@
 	  return axios.get('https://api.github.com/users/' + username);
 	}
 
-	// const promiseObj = getRepos('alexiushaledubuque');
-	// promiseObj.then(function(data){
-	//   console.log(data);
-	// });
-
 	var helpers = {
 	  getGithubInfo: function getGithubInfo(username) {
-	    console.log('INSIDE HELPERS');
 	    return axios.all([getRepos(username), getUserInfo(username)]).then(function (arr) {
 	      return {
 	        repos: arr[0].data,
@@ -27364,8 +27403,6 @@
 	    });
 	  }
 	};
-
-	console.log('LEAVING HELPERS');
 
 	module.exports = helpers;
 

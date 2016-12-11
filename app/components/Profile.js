@@ -21,8 +21,6 @@ const Profile = React.createClass({
     const childRef = this.ref.child(this.props.params.username)
     this.bindAsArray(childRef, 'notes')
 
-    console.log('RUNNING HELPERS NEXT');
-
     helpers.getGithubInfo(this.props.params.username)
       .then(function(data){
         this.setState({
