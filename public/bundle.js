@@ -26600,6 +26600,9 @@
 	      });
 	    }.bind(this));
 	  },
+	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	    console.log(nextProps);
+	  },
 	  componentWillUnmount: function componentWillUnmount() {
 	    this.unbind('notes');
 	  },

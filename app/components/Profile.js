@@ -29,6 +29,9 @@ const Profile = React.createClass({
         })
       }.bind(this))
   },
+  componentWillReceiveProps (nextProps) {
+    console.log(nextProps)
+  },
   componentWillUnmount () {
     this.unbind('notes')
   },
