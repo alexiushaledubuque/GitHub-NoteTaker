@@ -22,12 +22,13 @@ const Profile = React.createClass({
   },
   componentWillReceiveProps (nextProps) {
     console.log(nextProps)
+    this.unbind('notes')
     this.init(nextProps.params.username)
   },
   componentWillUnmount () {
     this.unbind('notes')
   },
-  init () {
+  init (username) {
     const childRef = this.ref.child(username)
     this.bindAsArray(childRef, 'notes')
 

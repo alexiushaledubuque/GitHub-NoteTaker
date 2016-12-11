@@ -26594,12 +26594,13 @@
 	  },
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
 	    console.log(nextProps);
+	    this.unbind('notes');
 	    this.init(nextProps.params.username);
 	  },
 	  componentWillUnmount: function componentWillUnmount() {
 	    this.unbind('notes');
 	  },
-	  init: function init() {
+	  init: function init(username) {
 	    var childRef = this.ref.child(username);
 	    this.bindAsArray(childRef, 'notes');
 
