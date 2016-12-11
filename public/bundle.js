@@ -26751,16 +26751,16 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var UserProfiles = function (_React$Component) {
-	  _inherits(UserProfiles, _React$Component);
+	var UserProfile = function (_React$Component) {
+	  _inherits(UserProfile, _React$Component);
 
-	  function UserProfiles() {
-	    _classCallCheck(this, UserProfiles);
+	  function UserProfile() {
+	    _classCallCheck(this, UserProfile);
 
-	    return _possibleConstructorReturn(this, (UserProfiles.__proto__ || Object.getPrototypeOf(UserProfiles)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (UserProfile.__proto__ || Object.getPrototypeOf(UserProfile)).apply(this, arguments));
 	  }
 
-	  _createClass(UserProfiles, [{
+	  _createClass(UserProfile, [{
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -26835,15 +26835,15 @@
 	    }
 	  }]);
 
-	  return UserProfiles;
+	  return UserProfile;
 	}(_react2.default.Component);
 
-	UserProfiles.propTypes = {
+	UserProfile.propTypes = {
 	  username: _react2.default.PropTypes.string.isRequired,
 	  bio: _react2.default.PropTypes.object.isRequired
 	};
 
-	exports.default = UserProfiles;
+	exports.default = UserProfile;
 
 /***/ },
 /* 240 */
