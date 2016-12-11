@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "firebase": "^2.4.2",
+    "re-base": "^2.5.1",
     "react": "^15.4.1",
     "react-router": "^3.0.0",
     "reactfire": "^0.4.0"
