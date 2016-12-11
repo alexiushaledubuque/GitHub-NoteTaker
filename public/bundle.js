@@ -26577,7 +26577,31 @@
 
 	'use strict';
 
+	var _react = __webpack_require__(3);
+
+	var _react2 = _interopRequireDefault(_react);
+
 	var _reactRouter = __webpack_require__(1);
+
+	var _Repos = __webpack_require__(238);
+
+	var _Repos2 = _interopRequireDefault(_Repos);
+
+	var _UserProfile = __webpack_require__(239);
+
+	var _UserProfile2 = _interopRequireDefault(_UserProfile);
+
+	var _Notes = __webpack_require__(240);
+
+	var _Notes2 = _interopRequireDefault(_Notes);
+
+	var _reactfire = __webpack_require__(243);
+
+	var _reactfire2 = _interopRequireDefault(_reactfire);
+
+	var _firebase = __webpack_require__(244);
+
+	var _firebase2 = _interopRequireDefault(_firebase);
 
 	var _helpers = __webpack_require__(245);
 
@@ -26585,19 +26609,10 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var React = __webpack_require__(3);
-
-	var Repos = __webpack_require__(238);
-	var UserProfile = __webpack_require__(239);
-	var Notes = __webpack_require__(240);
-	var ReactFireMixin = __webpack_require__(243);
-	var Firebase = __webpack_require__(244);
-
-
-	var Profile = React.createClass({
+	var Profile = _react2.default.createClass({
 	  displayName: 'Profile',
 
-	  mixins: [ReactFireMixin],
+	  mixins: [_reactfire2.default],
 	  getInitialState: function getInitialState() {
 	    return {
 	      notes: [],
@@ -26606,7 +26621,7 @@
 	    };
 	  },
 	  componentDidMount: function componentDidMount() {
-	    this.ref = new Firebase('http://github-notetaker-ce9a6.firebaseio.com/');
+	    this.ref = new _firebase2.default('http://github-notetaker-ce9a6.firebaseio.com/');
 	    this.init(this.props.params.username);
 	  },
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
@@ -26631,23 +26646,23 @@
 	    this.ref.child(username).child(this.state.notes.length).set(newNote);
 	  },
 	  render: function render() {
-	    return React.createElement(
+	    return _react2.default.createElement(
 	      'div',
 	      { className: 'row' },
-	      React.createElement(
+	      _react2.default.createElement(
 	        'div',
 	        { className: 'col-md-4' },
-	        React.createElement(UserProfile, { username: this.props.params.username, bio: this.state.bio })
+	        _react2.default.createElement(_UserProfile2.default, { username: this.props.params.username, bio: this.state.bio })
 	      ),
-	      React.createElement(
+	      _react2.default.createElement(
 	        'div',
 	        { className: 'col-md-4' },
-	        React.createElement(Repos, { username: this.props.params.username, repos: this.state.repos })
+	        _react2.default.createElement(_Repos2.default, { username: this.props.params.username, repos: this.state.repos })
 	      ),
-	      React.createElement(
+	      _react2.default.createElement(
 	        'div',
 	        { className: 'col-md-4' },
-	        React.createElement(Notes, { username: this.props.params.username,
+	        _react2.default.createElement(_Notes2.default, { username: this.props.params.username,
 	          notes: this.state.notes,
 	          addNote: this.handleAddNote })
 	      )

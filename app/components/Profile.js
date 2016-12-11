@@ -1,10 +1,10 @@
-const React = require('react')
+import React from 'react'
 import { Router } from 'react-router'
-const Repos = require('./GitHub/Repos')
-const UserProfile = require('./GitHub/UserProfile')
-const Notes = require('./Notes/Notes')
-const ReactFireMixin = require('reactfire')
-const Firebase = require('firebase')
+import Repos from './GitHub/Repos'
+import UserProfile from './GitHub/UserProfile'
+import Notes from './Notes/Notes'
+import ReactFireMixin from 'reactfire'
+import Firebase from 'firebase'
 import getGithubInfo from '../utils/helpers'
 
 const Profile = React.createClass({
