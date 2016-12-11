@@ -26590,19 +26590,20 @@
 	  },
 	  componentDidMount: function componentDidMount() {
 	    this.ref = new Firebase('http://github-notetaker-ce9a6.firebaseio.com/');
-	    this.init();
+	    this.init(this.props.params.username);
 	  },
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
 	    console.log(nextProps);
+	    this.init(nextProps.params.username);
 	  },
 	  componentWillUnmount: function componentWillUnmount() {
 	    this.unbind('notes');
 	  },
 	  init: function init() {
-	    var childRef = this.ref.child(this.props.params.username);
+	    var childRef = this.ref.child(username);
 	    this.bindAsArray(childRef, 'notes');
 
-	    helpers.getGithubInfo(this.props.params.username).then(function (data) {
+	    helpers.getGithubInfo(username).then(function (data) {
 	      this.setState({
 	        bio: data.bio,
 	        repos: data.repos
@@ -26610,7 +26611,7 @@
 	    }.bind(this));
 	  },
 	  handleAddNote: function handleAddNote(newNote) {
-	    this.ref.child(this.props.params.username).child(this.state.notes.length).set(newNote);
+	    this.ref.child(username).child(this.state.notes.length).set(newNote);
 	  },
 	  render: function render() {
 	    return React.createElement(
