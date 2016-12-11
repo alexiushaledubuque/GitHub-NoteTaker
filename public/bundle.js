@@ -26386,31 +26386,31 @@
 
 	'use strict';
 
-	var _createBrowserHistory = __webpack_require__(77);
+	var _react = __webpack_require__(3);
 
-	var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Main = __webpack_require__(234);
+
+	var _Main2 = _interopRequireDefault(_Main);
+
+	var _Home = __webpack_require__(236);
+
+	var _Home2 = _interopRequireDefault(_Home);
+
+	var _Profile = __webpack_require__(237);
+
+	var _Profile2 = _interopRequireDefault(_Profile);
 
 	var _reactRouter = __webpack_require__(1);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var React = __webpack_require__(3);
-	var Main = __webpack_require__(234);
-	var Home = __webpack_require__(236);
-	var Profile = __webpack_require__(237);
-
-
-	var history = (0, _createBrowserHistory2.default)();
-
-	module.exports = React.createElement(
-	  _reactRouter.Router,
-	  { history: (0, _createBrowserHistory2.default)() },
-	  React.createElement(
-	    _reactRouter.Route,
-	    { path: '/', component: Main },
-	    React.createElement(_reactRouter.Route, { path: '/profile/:username', component: Profile }),
-	    React.createElement(_reactRouter.IndexRoute, { component: Home })
-	  )
+	module.exports = _react2.default.createElement(
+	  _reactRouter.Route,
+	  { path: '/', component: _Main2.default },
+	  _react2.default.createElement(_reactRouter.Route, { path: '/profile/:username', component: _Profile2.default }),
+	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default })
 	);
 
 /***/ },
