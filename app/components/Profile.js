@@ -21,7 +21,6 @@ const Profile = React.createClass({
     this.init(this.props.params.username)
   },
   componentWillReceiveProps (nextProps) {
-    console.log(nextProps)
     this.unbind('notes')
     this.init(nextProps.params.username)
   },
