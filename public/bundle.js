@@ -26548,7 +26548,11 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'form-group col-sm-3' },
-	            'Return to Main'
+	            _react2.default.createElement(
+	              'a',
+	              { href: '' },
+	              'Return to Main'
+	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',

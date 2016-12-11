@@ -17,7 +17,7 @@ class SearchGithub extends React.Component {
       <div className="col-sm-12">
         <form onSubmit={() => this.handleSubmit()}>
           <div className="form-group col-sm-3">
-            Return to Main
+            <a href="">Return to Main</a>
           </div>
           <div className="form-group col-sm-5">
             <input type="text" className="form-control" ref={(ref) => this.getRef(ref)} />
