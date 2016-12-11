@@ -18,6 +18,15 @@ const Profile = React.createClass({
   },
   componentDidMount () {
     this.ref = new Firebase('http://github-notetaker-ce9a6.firebaseio.com/')
+    this.init()
+  },
+  componentWillReceiveProps (nextProps) {
+    console.log(nextProps)
+  },
+  componentWillUnmount () {
+    this.unbind('notes')
+  },
+  init () {
     const childRef = this.ref.child(this.props.params.username)
     this.bindAsArray(childRef, 'notes')
 
@@ -28,12 +37,6 @@ const Profile = React.createClass({
           repos: data.repos
         })
       }.bind(this))
-  },
-  componentWillReceiveProps (nextProps) {
-    console.log(nextProps)
-  },
-  componentWillUnmount () {
-    this.unbind('notes')
   },
   handleAddNote (newNote) {
     this.ref.child(this.props.params.username).child(this.state.notes.length).set(newNote)
