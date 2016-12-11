@@ -26386,6 +26386,10 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _react = __webpack_require__(3);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -26406,7 +26410,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	module.exports = _react2.default.createElement(
+	exports.default = _react2.default.createElement(
 	  _reactRouter.Route,
 	  { path: '/', component: _Main2.default },
 	  _react2.default.createElement(_reactRouter.Route, { path: '/profile/:username', component: _Profile2.default }),
