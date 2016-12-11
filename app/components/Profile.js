@@ -5,7 +5,13 @@ import Notes from './Notes/Notes'
 import getGithubInfo from '../utils/helpers'
 import Rebase from 're-base'
 
-const base = Rebase.createClass('https://github-notetaker-ce9a6.firebaseio.com/')
+const base = Rebase.createClass({
+  apiKey: "AIzaSyCbSPpFFtcKbRuUzyeNQbdxFu0fJ80Ztjc",
+  authDomain: "github-notetaker-ce9a6.firebaseapp.com",
+  databaseURL: "https://github-notetaker-ce9a6.firebaseio.com",
+  storageBucket: "github-notetaker-ce9a6.appspot.com",
+  messagingSenderId: "223186922355"
+}, 'app')
 
 class Profile extends React.Component {
   constructor (props) {

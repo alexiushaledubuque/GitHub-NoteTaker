@@ -26668,7 +26668,13 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var base = _reBase2.default.createClass('https://github-notetaker-ce9a6.firebaseio.com/');
+	var base = _reBase2.default.createClass({
+	  apiKey: "AIzaSyCbSPpFFtcKbRuUzyeNQbdxFu0fJ80Ztjc",
+	  authDomain: "github-notetaker-ce9a6.firebaseapp.com",
+	  databaseURL: "https://github-notetaker-ce9a6.firebaseio.com",
+	  storageBucket: "github-notetaker-ce9a6.appspot.com",
+	  messagingSenderId: "223186922355"
+	}, 'app');
 
 	var Profile = function (_React$Component) {
 	  _inherits(Profile, _React$Component);

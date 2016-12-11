@@ -2,7 +2,7 @@ import React from 'react'
 
 class AddNote extends React.Component {
   handleSubmit () {
-    let newNote = this.note.value
+    const newNote = this.note.value
     this.note.value = ''
     this.props.addNote(newNote)
   }
