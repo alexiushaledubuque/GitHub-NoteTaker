@@ -5,6 +5,8 @@ import Notes from './Notes/Notes'
 import getGithubInfo from '../utils/helpers'
 import Rebase from 're-base'
 
+const base = Rebase.createClass('https://github-notetaker-ce9a6.firebaseio.com/')
+
 class Profile extends React.Component {
   constructor (props) {
     super(props)
@@ -19,15 +21,18 @@ class Profile extends React.Component {
     this.init(this.props.params.username)
   }
   componentWillReceiveProps (nextProps) {
+    base.removeBinding(this.ref)
     this.init(nextProps.params.username)
   }
   componentWillUnmount () {
-
+    base.removeBinding(this.ref)
   }
   init (username) {
-    const childRef = this.ref.child(username)
-  this.bindAsArray(childRef, 'notes')
-
+    this.ref = base.bindToState(username, {
+      context: this,
+      asArray: true,
+      state: 'notes'
+    })
     getGithubInfo(username)
       .then(function(data){
       this.setState({
@@ -37,7 +42,9 @@ class Profile extends React.Component {
       }.bind(this))
   }
   handleAddNote (newNote) {
-
+    base.post(this.props.params.username, {
+      data: this.state.notes.concat([newNote])
+    })
   }
   render () {
     return (
@@ -51,7 +58,7 @@ class Profile extends React.Component {
         <div className="col-md-4">
           <Notes username={this.props.params.username}
           notes={this.state.notes}
-          addNote={this.handleAddNote} />
+          addNote={(newNote) => this.handleAddNoten(newNote)} />
         </div>
       </div>
     )

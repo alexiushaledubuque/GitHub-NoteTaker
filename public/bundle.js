@@ -26668,6 +26668,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var base = _reBase2.default.createClass('https://github-notetaker-ce9a6.firebaseio.com/');
+
 	var Profile = function (_React$Component) {
 	  _inherits(Profile, _React$Component);
 
@@ -26692,17 +26694,22 @@
 	  }, {
 	    key: 'componentWillReceiveProps',
 	    value: function componentWillReceiveProps(nextProps) {
+	      base.removeBinding(this.ref);
 	      this.init(nextProps.params.username);
 	    }
 	  }, {
 	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {}
+	    value: function componentWillUnmount() {
+	      base.removeBinding(this.ref);
+	    }
 	  }, {
 	    key: 'init',
 	    value: function init(username) {
-	      var childRef = this.ref.child(username);
-	      this.bindAsArray(childRef, 'notes');
-
+	      this.ref = base.bindToState(username, {
+	        context: this,
+	        asArray: true,
+	        state: 'notes'
+	      });
 	      (0, _helpers2.default)(username).then(function (data) {
 	        this.setState({
 	          bio: data.bio,
@@ -26712,10 +26719,16 @@
 	    }
 	  }, {
 	    key: 'handleAddNote',
-	    value: function handleAddNote(newNote) {}
+	    value: function handleAddNote(newNote) {
+	      base.post(this.props.params.username, {
+	        data: this.state.notes.concat([newNote])
+	      });
+	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'row' },
@@ -26734,7 +26747,9 @@
 	          { className: 'col-md-4' },
 	          _react2.default.createElement(_Notes2.default, { username: this.props.params.username,
 	            notes: this.state.notes,
-	            addNote: this.handleAddNote })
+	            addNote: function addNote(newNote) {
+	              return _this2.handleAddNoten(newNote);
+	            } })
 	        )
 	      );
 	    }
@@ -27061,7 +27076,7 @@
 	          return _react2.default.createElement(
 	            "li",
 	            { className: "list-group-item", key: index },
-	            note['.value']
+	            note
 	          );
 	        })
 	      );
