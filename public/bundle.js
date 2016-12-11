@@ -26547,6 +26547,11 @@
 	            } },
 	          _react2.default.createElement(
 	            'div',
+	            { className: 'form-group col-sm-1' },
+	            'Return to Main'
+	          ),
+	          _react2.default.createElement(
+	            'div',
 	            { className: 'form-group col-sm-7' },
 	            _react2.default.createElement('input', { type: 'text', className: 'form-control', ref: function ref(_ref) {
 	                return _this2.getRef(_ref);
@@ -26554,7 +26559,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'form-group col-sm-5' },
+	            { className: 'form-group col-sm-4' },
 	            _react2.default.createElement(
 	              'button',
 	              { type: 'submit', className: 'btn btn-block btn-primary' },
