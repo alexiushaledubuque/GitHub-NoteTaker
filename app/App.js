@@ -1,8 +1,8 @@
-const React = require('react')
-const ReactDOM = require('react-dom')
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { Router, Route, hashHistory } from 'react-router'
 
-const routes = require('./config/routes')
+import routes from './config/routes'
 
 ReactDOM.render(
   <Router history={ hashHistory }>{routes}</Router>,

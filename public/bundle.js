@@ -46,18 +46,26 @@
 
 	'use strict';
 
+	var _react = __webpack_require__(3);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(87);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
 	var _reactRouter = __webpack_require__(1);
 
-	var React = __webpack_require__(3);
-	var ReactDOM = __webpack_require__(87);
+	var _routes = __webpack_require__(233);
 
+	var _routes2 = _interopRequireDefault(_routes);
 
-	var routes = __webpack_require__(233);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	ReactDOM.render(React.createElement(
+	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.hashHistory },
-	  routes
+	  _routes2.default
 	), document.getElementById('app'));
 
 /***/ },
