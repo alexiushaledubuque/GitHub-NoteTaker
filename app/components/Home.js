@@ -1,6 +1,6 @@
-const React = require('react');
+import React from 'react'
 
-const Home = React.createClass({
+class Home extends React.Component {
   render () {
     return (
       <h2 className="text-center">
@@ -8,6 +8,6 @@ const Home = React.createClass({
       </h2>
     )
   }
-})
+}
 
-module.exports = Home
+export default Home
