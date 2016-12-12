@@ -26501,8 +26501,6 @@
 
 	var _reactRouter = __webpack_require__(1);
 
-	var _reactRouter2 = _interopRequireDefault(_reactRouter);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26588,7 +26586,7 @@
 /* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -26618,12 +26616,12 @@
 	  }
 
 	  _createClass(Home, [{
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "h2",
-	        { className: "text-center" },
-	        "Search by Github Username Above"
+	        'h2',
+	        { className: 'text-center' },
+	        'Search by Github Username Above'
 	      );
 	    }
 	  }]);
@@ -26678,11 +26676,11 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var base = _reBase2.default.createClass({
-	  apiKey: "AIzaSyCbSPpFFtcKbRuUzyeNQbdxFu0fJ80Ztjc",
-	  authDomain: "github-notetaker-ce9a6.firebaseapp.com",
-	  databaseURL: "https://github-notetaker-ce9a6.firebaseio.com",
-	  storageBucket: "github-notetaker-ce9a6.appspot.com",
-	  messagingSenderId: "223186922355"
+	  apiKey: 'AIzaSyCbSPpFFtcKbRuUzyeNQbdxFu0fJ80Ztjc',
+	  authDomain: 'github-notetaker-ce9a6.firebaseapp.com',
+	  databaseURL: 'https://github-notetaker-ce9a6.firebaseio.com',
+	  storageBucket: 'github-notetaker-ce9a6.appspot.com',
+	  messagingSenderId: '223186922355'
 	}, 'app');
 
 	var Profile = function (_React$Component) {
@@ -26779,7 +26777,7 @@
 /* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -26809,34 +26807,34 @@
 	  }
 
 	  _createClass(Repos, [{
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
+	        'div',
 	        null,
 	        _react2.default.createElement(
-	          "h3",
+	          'h3',
 	          null,
-	          " User Repos "
+	          ' User Repos '
 	        ),
 	        _react2.default.createElement(
-	          "ul",
-	          { className: "list-group" },
+	          'ul',
+	          { className: 'list-group' },
 	          this.props.repos.map(function (repo, index) {
 	            return _react2.default.createElement(
-	              "li",
-	              { className: "list-group-item", key: index },
+	              'li',
+	              { className: 'list-group-item', key: index },
 	              repo.html_url && _react2.default.createElement(
-	                "h4",
+	                'h4',
 	                null,
 	                _react2.default.createElement(
-	                  "a",
+	                  'a',
 	                  { href: repo.html_url },
 	                  repo.name
 	                )
 	              ),
 	              repo.description && _react2.default.createElement(
-	                "p",
+	                'p',
 	                null,
 	                repo.description
 	              )
@@ -26861,7 +26859,7 @@
 /* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -26891,73 +26889,73 @@
 	  }
 
 	  _createClass(UserProfile, [{
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
+	        'div',
 	        null,
 	        this.props.bio.avatar_url && _react2.default.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          " ",
-	          _react2.default.createElement("img", { src: this.props.bio.avatar_url, className: "img-rounded img-responsive" })
+	          'li',
+	          { className: 'list-group-item' },
+	          ' ',
+	          _react2.default.createElement('img', { src: this.props.bio.avatar_url, className: 'img-rounded img-responsive' })
 	        ),
 	        this.props.bio.name && _react2.default.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Name: ",
+	          'li',
+	          { className: 'list-group-item' },
+	          'Name: ',
 	          this.props.bio.name
 	        ),
 	        this.props.bio.login && _react2.default.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Username: ",
+	          'li',
+	          { className: 'list-group-item' },
+	          'Username: ',
 	          this.props.bio.login
 	        ),
 	        this.props.bio.email && _react2.default.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Email: ",
+	          'li',
+	          { className: 'list-group-item' },
+	          'Email: ',
 	          this.props.bio.email
 	        ),
 	        this.props.bio.location && _react2.default.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Location: ",
+	          'li',
+	          { className: 'list-group-item' },
+	          'Location: ',
 	          this.props.bio.location
 	        ),
 	        this.props.bio.company && _react2.default.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Company: ",
+	          'li',
+	          { className: 'list-group-item' },
+	          'Company: ',
 	          this.props.bio.company
 	        ),
 	        this.props.bio.followers && _react2.default.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Followers: ",
+	          'li',
+	          { className: 'list-group-item' },
+	          'Followers: ',
 	          this.props.bio.followers
 	        ),
 	        this.props.bio.following && _react2.default.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Following: ",
+	          'li',
+	          { className: 'list-group-item' },
+	          'Following: ',
 	          this.props.bio.following
 	        ),
 	        this.props.bio.following && _react2.default.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Public Repos: ",
+	          'li',
+	          { className: 'list-group-item' },
+	          'Public Repos: ',
 	          this.props.bio.public_repos
 	        ),
 	        this.props.bio.blog && _react2.default.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Blog: ",
+	          'li',
+	          { className: 'list-group-item' },
+	          'Blog: ',
 	          _react2.default.createElement(
-	            "a",
+	            'a',
 	            { href: this.props.bio.blog },
-	            " ",
+	            ' ',
 	            this.props.bio.blog
 	          )
 	        )
@@ -27050,7 +27048,7 @@
 /* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -27080,17 +27078,17 @@
 	  }
 
 	  _createClass(NotesList, [{
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
 	      var notes = this.props.notes;
 
 	      return _react2.default.createElement(
-	        "ul",
-	        { className: "list-group" },
+	        'ul',
+	        { className: 'list-group' },
 	        notes.map(function (note, index) {
 	          return _react2.default.createElement(
-	            "li",
-	            { className: "list-group-item", key: index },
+	            'li',
+	            { className: 'list-group-item', key: index },
 	            note
 	          );
 	        })
