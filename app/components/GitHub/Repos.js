@@ -1,10 +1,12 @@
 import React from 'react'
+import ScrollView from 'react-scrollbar'
 
 class Repos extends React.Component {
   render () {
     return (
       <div>
         <h3> User Repos </h3>
+        <ScrollView>
         <ul className='list-group'>
           {this.props.repos.map((repo, index) => {
             return (
@@ -15,6 +17,7 @@ class Repos extends React.Component {
             )
           })}
         </ul>
+        </ScrollView>
       </div>
     )
   }
