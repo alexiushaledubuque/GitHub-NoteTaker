@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "standard",
-    "build": "webpack --module-bind 'js=babel' app/App.js public/bundle.js"
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
