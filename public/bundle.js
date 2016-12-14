@@ -26947,12 +26947,6 @@
 	          'Followers: ',
 	          this.props.bio.followers
 	        ),
-	        this.props.bio.following && _react2.default.createElement(
-	          'li',
-	          { className: 'list-group-item' },
-	          'Following: ',
-	          this.props.bio.following
-	        ),
 	        this.props.bio.blog && _react2.default.createElement(
 	          'li',
 	          { className: 'list-group-item' },
