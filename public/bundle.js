@@ -26809,9 +26809,10 @@
 	  _createClass(Repos, [{
 	    key: 'render',
 	    value: function render() {
+	      var style = { overflow: scroll };
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { style: style },
 	        _react2.default.createElement(
 	          'h3',
 	          null,
