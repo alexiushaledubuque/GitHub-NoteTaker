@@ -6,8 +6,7 @@ class Repos extends React.Component {
     return (
       <div>
         <h3> User Repos </h3>
-        <ScrollView>
-        <ul className='list-group'>
+        <ul className='list-group' style={{overflow: 'auto'}}>
           {this.props.repos.map((repo, index) => {
             return (
               <li className='list-group-item' key={index}>
@@ -17,7 +16,6 @@ class Repos extends React.Component {
             )
           })}
         </ul>
-        </ScrollView>
       </div>
     )
   }
