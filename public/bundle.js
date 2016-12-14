@@ -26459,7 +26459,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'main-container', width: '200px', height: '50px' },
+	        { className: 'main-container' },
 	        _react2.default.createElement(
 	          'nav',
 	          { className: 'navbar navbar-default', role: 'navigation' },
