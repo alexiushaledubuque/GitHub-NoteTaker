@@ -1,10 +1,9 @@
 import React from 'react'
-import ScrollView from 'react-scrollbar'
 
 class Repos extends React.Component {
   render () {
     return (
-      <div overflow='scroll'>
+      <div>
         <h3> User Repos </h3>
         <ul className='list-group'>
           {this.props.repos.map((repo, index) => {
