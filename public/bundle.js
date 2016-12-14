@@ -26459,7 +26459,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'main-container' },
+	        { className: 'main-container', width: '200px', height: '50px' },
 	        _react2.default.createElement(
 	          'nav',
 	          { className: 'navbar navbar-default', role: 'navigation' },
@@ -26815,7 +26815,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { overflow: 'scroll' },
 	        _react2.default.createElement(
 	          'h3',
 	          null,
@@ -26823,7 +26823,7 @@
 	        ),
 	        _react2.default.createElement(
 	          'ul',
-	          { className: 'list-group', style: { overflow: 'auto' } },
+	          { className: 'list-group' },
 	          this.props.repos.map(function (repo, index) {
 	            return _react2.default.createElement(
 	              'li',
