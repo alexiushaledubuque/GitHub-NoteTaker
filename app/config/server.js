@@ -8,7 +8,7 @@ const Express = require('express')
 const React = require('react')
 const { renderToString } = require ('react-dom/server')
 const { match, RouterContext } = require('react-router') 
-const routes = require('routes')
+const routes = require('./routes.jsx')
 
 // initialize the server and configure support for ejs templates
 const app = new Express()
@@ -27,10 +27,10 @@ app.use((req, res) => {
 
     { routes, location: req.url }, 
 
-    (error, redirectionLocation, renderProps) => {
+    (err, redirectionLocation, renderProps) => {
     
     // in case of error display the error message
-    if (error) {
+    if (err) {
       res.status(500).send(error.message)
     } 
 
@@ -54,17 +54,18 @@ app.use((req, res) => {
     }
 
     // render the index template with the embedded React markup
-    return res.render('index', { markup })
+    return res.render('index', { body })
     }
   )
 })
 
 // start the server
 const port = process.env.PORT || 3000
+const env = process.env.NODE_ENV || 'production';
 
 server.listen(port, err => {
-  if (error) {
-    return console.error(error)
+  if (err) {
+    return console.error(err)
   }
   console.info(`Server listening on http://localhost:${port} [${env}]`)
 })
