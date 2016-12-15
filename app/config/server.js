@@ -1,3 +1,5 @@
+// config/server.js
+
 require('babel-register')
 
 import path from 'path'
