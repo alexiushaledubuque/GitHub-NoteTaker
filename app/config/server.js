@@ -2,13 +2,13 @@
 
 require('babel-register')
 
-import path from 'path'
-import { Server } from 'http'
-import Express from 'express'
-import React from 'react'
-import { renderToString } from 'react-dom/server'
-import { match, RouterContext } from 'react-router'
-import routes from './config/routes'
+const path = require('path')
+const { Server } = require('http')
+const Express = require('express')
+const React = require('react')
+const { renderToString } = require ('react-dom/server')
+const { match, RouterContext } = require('react-router') 
+const routes = require('routes')
 
 // initialize the server and configure support for ejs templates
 const app = new Express()
@@ -18,10 +18,10 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
 // define the folder that will be used for static assets
-app.use(Express.static(path.join(__dirname, 'pubilc'))
+app.use(Express.static(path.join(__dirname, 'public')))
 
 // universal routing and rendering
-app.get('*', (req, res) => {
+app.use((req, res) => {
 
   match(
 
@@ -40,11 +40,14 @@ app.get('*', (req, res) => {
     } 
 
     // generate the React markup for the current route
-    let markup
+    let body
 
     if (renderProps) {
       // if the current route matched we have renderProps
-      markup = renderToString(<RouterContext {...renderProps}/>)
+      body = ReactDOMServer.renderToString(
+        React.createElement(RouterContext, renderProps)
+        )
+      res.status(200)
     } else {
       // otherwise we can render a 404 page
       res.status(404)
