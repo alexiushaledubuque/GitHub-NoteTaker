@@ -10,5 +10,5 @@ import routes from './config/routes'
 // )
 
 window.onload = () => {
-  ReactDOM.render(<Router history={hashHistory}>{routes}</Router>, document.getElementById('app'));
-}
+  ReactDOM.render(<AppRoutes/>, document.getElementById('main'));
+};
