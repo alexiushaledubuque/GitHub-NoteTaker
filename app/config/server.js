@@ -50,12 +50,10 @@ app.get('*', (req, res) => {
     if (renderProps) {
       // if the current route matched we have renderProps
       body = renderToString(<RouterContext {...renderProps} />)
-      
-    } 
-    // else {
-    //   // otherwise we can render a 404 page
-    //   res.status(404)
-    // }
+    } else {
+      // otherwise we can render a 404 page
+      res.status(404)
+    }
 
     // render the index template with the embedded React markup
     return res.render('index', { body })
