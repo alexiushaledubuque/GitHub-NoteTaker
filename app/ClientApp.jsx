@@ -2,13 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, hashHistory } from 'react-router'
 
-import routes from './config/routes'
+import AppRoutes from './config/routes'
 
-// ReactDOM.render(
-//   <Router history={hashHistory}>{routes}</Router>,
-//   document.getElementById('app')
-// )
-
-window.onload = () => {
-  ReactDOM.render(<AppRoutes/>, document.getElementById('main'));
-};
+ReactDOM.render(
+  <Router history={hashHistory}>{AppRoutes}</Router>,
+  document.getElementById('app')
+)
