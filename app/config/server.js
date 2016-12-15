@@ -26,7 +26,7 @@ app.use(Express.static(path.join(__dirname, 'public')))
 
 
 // universal routing and rendering
-app.get((req, res) => {
+app.get('*', (req, res) => {
 
   match(
 
