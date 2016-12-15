@@ -54,19 +54,22 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _reactRouter = __webpack_require__(178);
-
 	var _routes = __webpack_require__(233);
 
 	var _routes2 = _interopRequireDefault(_routes);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(
-	  _reactRouter.Router,
-	  { history: _reactRouter.hashHistory },
-	  _routes2.default
-	), document.getElementById('app'));
+	// ReactDOM.render(
+	//   <Router history={hashHistory}>{AppRoutes}</Router>,
+	//   document.getElementById('app')
+	// )
+
+
+	window.onload = function () {
+	  _reactDom2.default.render(_react2.default.createElement(_routes2.default, null), document.getElementById('app'));
+	};
+	// import { Router, hashHistory } from 'react-router'
 
 /***/ },
 /* 1 */
@@ -26410,12 +26413,21 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = _react2.default.createElement(
+	var routes = _react2.default.createElement(
 	  _reactRouter.Route,
 	  { path: '/', component: _Main2.default },
 	  _react2.default.createElement(_reactRouter.Route, { path: '/profile/:username', component: _Profile2.default }),
 	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default })
 	);
+
+	exports.default = routes;
+
+	// export default (
+	//   <Route path='/' component={Main}>
+	//     <Route path='/profile/:username' component={Profile} />
+	//     <IndexRoute component={Home} />
+	//   </Route>
+	// )
 
 /***/ },
 /* 234 */

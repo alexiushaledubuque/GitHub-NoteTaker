@@ -29,6 +29,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel',
         query: {
+          cacheDirectory: 'babel_cache',
           presets: ['react', 'es2015']
         }
       }
