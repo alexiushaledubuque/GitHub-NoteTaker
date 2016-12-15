@@ -22,7 +22,7 @@ app.set('views', path.join(__dirname, 'views'))
 
 
 // define the folder that will be used for static assets
-app.use(Express.static(path.join(__dirname, 'public')))
+app.use(Express.static(__dirname + '/../../public'))
 
 
 // universal routing and rendering
