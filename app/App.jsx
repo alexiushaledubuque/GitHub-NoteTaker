@@ -4,7 +4,11 @@ import { Router, hashHistory } from 'react-router'
 
 import routes from './config/routes'
 
-ReactDOM.render(
-  <Router history={hashHistory}>{routes}</Router>,
-  document.getElementById('app')
-)
+// ReactDOM.render(
+//   <Router history={hashHistory}>{routes}</Router>,
+//   document.getElementById('app')
+// )
+
+window.onload = () => {
+  ReactDOM.render(<Router history={hashHistory}>{routes}</Router>, document.getElementById('app'));
+}

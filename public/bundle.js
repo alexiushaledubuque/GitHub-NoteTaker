@@ -62,11 +62,18 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(
-	  _reactRouter.Router,
-	  { history: _reactRouter.hashHistory },
-	  _routes2.default
-	), document.getElementById('app'));
+	// ReactDOM.render(
+	//   <Router history={hashHistory}>{routes}</Router>,
+	//   document.getElementById('app')
+	// )
+
+	window.onload = function () {
+	  _reactDom2.default.render(_react2.default.createElement(
+	    _reactRouter.Router,
+	    { history: _reactRouter.hashHistory },
+	    _routes2.default
+	  ), document.getElementById('app'));
+	};
 
 /***/ },
 /* 1 */
