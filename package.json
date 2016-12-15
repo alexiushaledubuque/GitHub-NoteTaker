@@ -6,7 +6,8 @@
   "scripts": {
     "test": "standard",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "start": "NODE_ENV=production node_modules/.bin/babel-node --presets 'react,es2015' app/config/server.js"
   },
   "author": "",
   "license": "ISC",
