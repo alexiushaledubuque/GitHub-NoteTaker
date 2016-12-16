@@ -1,3 +1,25 @@
+.main-container {
+  background-image: url(img/Github-Mug.png);
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  width: 100%;
+}
+
+.mainSearch {
+  background-color: 
+}
+
+#home {
+  color: white;
+}
+
 .notes {
-  color: #ff0000;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.repos {
+  height: 400px;
+  overflow-y: scroll;
 }

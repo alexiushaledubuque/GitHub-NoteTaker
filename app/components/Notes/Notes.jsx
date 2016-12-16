@@ -5,7 +5,7 @@ import AddNote from './AddNote'
 class Notes extends React.Component {
   render () {
     return (
-      <div className='notes'>
+      <div>
         <h3> Notes for {this.props.username} </h3>
         <AddNote username={this.props.username} addNote={this.props.addNote} />
         <NotesList notes={this.props.notes} />

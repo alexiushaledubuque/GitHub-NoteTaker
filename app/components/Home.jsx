@@ -4,7 +4,7 @@ class Home extends React.Component {
   render () {
     return (
       <h2 className='text-center'>
-        Search by Github Username Above
+        <span id='home'>Search by Github Username Above</span>
       </h2>
     )
   }
