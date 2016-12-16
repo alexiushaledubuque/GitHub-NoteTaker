@@ -15,11 +15,12 @@
 }
 
 .notes {
-  height: 400px;
+  height: 453px;
   overflow-y: scroll;
 }
 
 .repos {
-  height: 400px;
+  height: 456px;
+  border-radius: 4px;
   overflow-y: scroll;
 }
