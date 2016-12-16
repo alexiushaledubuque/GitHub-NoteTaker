@@ -5,7 +5,7 @@ class Repos extends React.Component {
     return (
       <div>
         <h3><span id='repoTitle'>User Repos</span></h3>
-        <ul className='list-group repos'>
+        <ul className='list-group reposList'>
           {this.props.repos.map((repo, index) => {
             return (
               <li className='list-group-item' key={index}>

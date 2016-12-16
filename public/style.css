@@ -11,7 +11,7 @@
 }
 
 .addSpace {
-  padding-top: 40px;
+  padding-top: 50px;
 }
 
 #homeTitle {
@@ -26,13 +26,13 @@
   color: white;
 }
 
-.notes {
-  height: 453px;
+.notesList {
+  height: 460px;
   overflow-y: scroll;
 }
 
-.repos {
-  height: 456px;
+.reposList {
+  height: 470px;
   border-radius: 4px;
   overflow-y: scroll;
 }
