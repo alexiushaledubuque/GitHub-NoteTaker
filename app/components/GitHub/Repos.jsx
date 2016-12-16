@@ -2,10 +2,9 @@ import React from 'react'
 
 class Repos extends React.Component {
   render () {
-    const style = {overflow: scroll}
     return (
-      <div style={ style }>
-        <h3> User Repos </h3>
+      <div>
+        <h3><span id='repoTitle'>User Repos</span></h3>
         <ul className='list-group repos'>
           {this.props.repos.map((repo, index) => {
             return (
