@@ -19,7 +19,7 @@ class SearchGithub extends React.Component {
             <a href=''>Return to Main</a>
           </div>
           <div className='form-group col-sm-5'>
-            <input type='text' className='form-control' ref={(ref) => this.getRef(ref)} />
+            <input type='text' className='form-control text-center' placeholder='janedoe' ref={(ref) => this.getRef(ref)} />
           </div>
           <div className='form-group col-sm-4'>
             <button type='submit' className='btn btn-block btn-primary'>
