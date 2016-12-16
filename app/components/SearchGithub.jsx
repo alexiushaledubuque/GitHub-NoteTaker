@@ -22,7 +22,9 @@ class SearchGithub extends React.Component {
             <input type='text' className='form-control' ref={(ref) => this.getRef(ref)} />
           </div>
           <div className='form-group col-sm-4'>
-            <button type='submit' className='btn btn-block btn-primary'>Search Github</button>
+            <button type='submit' className='btn btn-block btn-primary'>
+              <span class="glyphicon glyphicon-search" aria-hidden="true">Search Github</span>
+            </button>
           </div>
         </form>
       </div>
