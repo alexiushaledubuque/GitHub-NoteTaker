@@ -10,6 +10,10 @@
   background-color: 
 }
 
+.addSpace {
+  padding-top: 50px;
+}
+
 #home {
   color: white;
 }

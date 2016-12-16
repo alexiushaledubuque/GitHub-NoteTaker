@@ -10,7 +10,7 @@ class Main extends React.Component {
             <SearchGithub />
           </div>
         </nav>
-        <div className='container'>
+        <div className='container addSpace'>
           {this.props.children}
         </div>
       </div>
